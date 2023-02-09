@@ -14,6 +14,6 @@ const UserSchema = mongoose.Schema({
         type : String,
         required : true
     }
-},{timeStamp : true});
+},{timestamps : true});
 
-module.exports = mongoose.model.apply("User",UserSchema);
+module.exports = mongoose.model("User",UserSchema);
