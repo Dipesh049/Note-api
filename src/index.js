@@ -1,11 +1,11 @@
 const express = require("express");
-const noteRouter = require("../routes/noteRoutes");
-const userRouter = require("../routes/userRoutes");
+const noteRouter = require("./routes/noteRoutes");
+const userRouter = require("./routes/userRoutes");
 const app = express();
 const dotenv = require("dotenv");
 const cors = require("cors");
 
-dotenv.config;
+dotenv.config();
 
 const mongoose  = require("mongoose");
 
@@ -27,9 +27,10 @@ app.get("/",(req,res) =>{
 res.send("Notes Api Created By Dipesh Patel");
 });
 
+
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect( process.env.MONGO_URL)
 .then (()=>{
     app.listen(PORT,()=>{
         console.log("server started on port no "+ PORT);
